@@ -35,3 +35,41 @@ print(list(filtered))
 
 
 print(list(filter(lambda x: x > 0, [1, 2, -5])))
+
+# reduce - принимает функцию и последовательность, возвращает результат (передаваемая функция должна принимать 2 аргумента)
+
+from functools import reduce
+
+print(reduce(lambda x, y: x + y, [1, 2, 3, 4, 5])) 
+
+# задачи 
+
+# ZIP
+
+list1 = [1, 2, 3, 4]
+list2 = ['a', 'b', 'c', 'd']
+
+# возведите во 2 степень числа из list1
+# сделайте строки верхним регистром в list2
+# сделайте dict при помощи zip и этих двух листов
+
+mapped1 = list(map(lambda x: x ** 2, list1))
+mapped2 = list(map(str.upper, list2))
+zipped1 = dict(zip(mapped1, mapped2))
+
+print(mapped1)
+print(mapped2)
+print(zipped1)
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [1, 3, 3, 0, 5]
+
+zipped = [x[0] == x[1] for x in zip(list1, list2)]
+print(zipped)
+
+lst = ['aza', '1234', '00']
+
+filtered = list(filter(lambda x: x == x[::-1], lst))
+s = ['1', '2', '3']
+s1 = reduce(lambda x, y: f'{x}, {y}', s)
+print(s1)
