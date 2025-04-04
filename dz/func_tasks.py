@@ -29,12 +29,13 @@
 #     Вывести в терминал количество дней за это время. 
 #     Считать, что в каждом месяце 30 дней
 
-def get_days():
-    months = int(input('enter months: '))
-    years = int(input('enter years: '))
-    return (months + years * 12) * 30
+# def get_days():
+#     months = int(input('enter months: '))
+#     years = int(input('enter years: '))
+#     return (months + years * 12) * 30
 
-print(get_days())
+# print(get_days())
+
 #     4) Создайте функцию, которая возвращает словарь, 
 #     где ключами будут числа от 1 до 10, а значениями эти же числа, возведенные в куб
 

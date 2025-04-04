@@ -70,6 +70,7 @@ print(zipped)
 lst = ['aza', '1234', '00']
 
 filtered = list(filter(lambda x: x == x[::-1], lst))
+
 s = ['1', '2', '3']
 s1 = reduce(lambda x, y: f'{x}, {y}', s)
 print(s1)

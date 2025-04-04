@@ -99,7 +99,7 @@ print(summa)
 # 2 вариант
 summa = 0
 for i in content:
-    if i.isdigit():
+    if i.isdigit(): 
         summa += int(i)
 
 print(summa)
