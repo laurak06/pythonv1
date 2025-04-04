@@ -19,14 +19,14 @@ def start_msg(message):
 
 
 def handler(message):
-    if message.text.lower() == 'ноутбуки':
-        laptops = [' '.join(i) for i in parsing('noutbuki')]
-        laptops = '\n\n'.join(laptops)
-        bot.send_message(message.chat.id, laptops)
-    elif message.text.lower() == 'телефоны':
-        telephones = [' '.join(i) for i in parsing('mobilnye-telefony')]
-        telephones = '\n\n'.join(telephones)
-        bot.send_message(message.chat.id, telephones)
+    if message.text.lower() == 'ноутбуки' or message.text.lower() == 'телефоны':
+        if message.text.lower() == 'ноутбуки':
+            items = parsing('noutbuki')
+        else:
+            items = parsing('mobilnye-telefony')
+        items = [f'Name: {name}\nDescription: {description}\nPrice: {price}\nLink: {link}' for name, description, price, link in items]
+        items = '\n\n'.join(items)
+        bot.send_message(message.chat.id, items)
 
 
 bot.polling(none_stop=True)

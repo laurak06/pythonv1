@@ -17,7 +17,8 @@ def parsing(item):
             name = item.find('div', class_="listbox_title oh").text.strip()
             description = item.find('div', class_="product_text pull-left").text.replace(name, '', 1).strip()
             price = item.find('div', class_="listbox_price text-center").text.strip().replace('\n', ' ')
-            items.append((name, description, price))
+            link = 'https://www.kivano.kg/' + item.find('a').get('href')
+            items.append((name, description, price, link))
 
         return items
     else:
