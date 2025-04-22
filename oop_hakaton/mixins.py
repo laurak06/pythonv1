@@ -22,7 +22,7 @@ class RegisterMixin:
                 }
                 users.append(new_user)
                 with open('user.json', 'w') as file:
-                    json.dump(users, file, indent=4)
+                    json.dump(users, file, indent=4, ensure_ascii=False) #
                     return 'Successfully registered'
             return 'Не получилось зарегистрироваться!'
 
@@ -59,7 +59,7 @@ class ChangePasswordMixin:
 
                         user['password'] = new_password
                         with open('user.json', 'w') as file:
-                            json.dump(users, file, indent=4)
+                            json.dump(users, file, indent=4, ensure_ascii=False)
                         return 'Password changed successfully!'
 
                 raise Exception('Нет такого юзера в БД!')
@@ -87,7 +87,7 @@ class ChangeUsernameMixin:
                     user['name'] = new_name
 
                     with open('user.json', 'w') as file:
-                        json.dump(users, file, indent=4)
+                        json.dump(users, file, indent=4, ensure_ascii=False)
 
                     return 'Username changed successfully'
 

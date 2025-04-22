@@ -21,6 +21,7 @@ class Post(CheckOwnerMixin):
 #тестирование класса User: login and register
 
 users = User()
+print(users.register('лаура', '12345678'))
 print(users.register('lau', '12345678'))
 print(users.register('katana', '123'))
 print(users.register('katana', '00000000'))
