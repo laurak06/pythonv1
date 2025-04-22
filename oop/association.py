@@ -27,3 +27,4 @@ class Nokia:
 iphone = Iphone('deep purple')
 battery_for_nokia = Battery()
 nokia = Nokia('black', battery_for_nokia)
+del iphone
